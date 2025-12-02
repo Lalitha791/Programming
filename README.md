@@ -1,4 +1,4 @@
-# python java javascript typescript
+# python, java ,javascript ,typescript
 
  programmes and concepts begginer 
 
@@ -220,6 +220,3 @@ void test() throws IOException { // declares
 
 ---
 
-I can continue and make a **full 20–30 confusable Java concepts Q&A list** with **code examples and diagrams**, which is perfect for **interview prep**.
-
-Do you want me to make the **full extended list** next?
