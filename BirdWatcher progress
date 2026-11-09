@@ -1,0 +1,263 @@
+https://exercism.org/tracks/java/exercises/bird-watcher
+
+
+
+class BirdWatcher {
+    private final int[] birdsPerDay;
+    public BirdWatcher(int[] birdsPerDay) {
+        this.birdsPerDay = birdsPerDay.clone();
+    }
+    public static int[] getLastWeek() {
+        
+    int[] lastweek = {0, 2, 5, 3, 7, 8, 4};
+    return lastweek;
+        
+    }
+    public int getToday() {
+        
+    int today = birdsPerDay[birdsPerDay.length - 1];
+    return today;
+        
+    }
+    public void incrementTodaysCount() {
+          int lastIndex = birdsPerDay.length - 1;
+    birdsPerDay[lastIndex] = birdsPerDay[lastIndex] + 1;
+ }
+    public boolean hasDayWithoutBirds() {
+         for (int i = 0; i < birdsPerDay.length; i++) {
+        if (birdsPerDay[i] == 0) {
+            return true;
+        }
+    }
+    return false;
+    }
+    public int getCountForFirstDays(int numberOfDays) {
+          int sum = 0;
+    if (numberOfDays > birdsPerDay.length) {
+        numberOfDays = birdsPerDay.length;
+    }
+    for (int i = 0; i < numberOfDays; i++) {
+        sum = sum + birdsPerDay[i];
+    }
+    return sum;
+    }
+    public int getBusyDays() {
+         int count = 0;
+    for (int i = 0; i < birdsPerDay.length; i++) {
+        if (birdsPerDay[i] >= 5) {
+            count++;
+        }
+    }
+    return count;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+# BirdWatcher – Complete Task Roadmap
+
+
+
+Beginner level
+
+Arrays + Loops + Conditions + Methods
+
+
+
+## Starting code
+
+We'll use this array throughout the exercise:
+
+```
+private int[] birdsPerDay;
+
+public BirdWatcher(int[] birdsPerDay) {
+    this.birdsPerDay = birdsPerDay.clone();
+}
+```
+
+## Task 1: Constructor – Store bird counts
+
+Concept: Constructor + Array + Clone
+
+Requirement: Store the given array inside the class without sharing the original array reference.
+
+Steps:
+
+1. Create a constructor.
+2. Accept `int[] birdsPerDay` as a parameter.
+3. Use `this.birdsPerDay` to refer to the class variable.
+4. Use `.clone()` to copy the array.
+
+## Task 2: `getLastWeek()`
+
+Concept: Array + Return
+
+Requirement: Return the bird counts for last week.
+
+Steps:
+
+1. Create a method with return type `int[]`.
+2. Create an array containing last week's counts.
+3. Return the array.
+
+Expected array:
+
+```
+{0, 2, 5, 3, 7, 8, 4}
+```
+
+## Task 3: `getToday()`
+
+Concept: Array indexing + Length
+
+Requirement: Return the number of birds seen today.
+
+Steps:
+
+1. Find the array length.
+2. Subtract 1 to get the last index.
+3. Return the element at that index.
+
+Remember:
+
+```
+birdsPerDay.length - 1
+```
+
+## Task 4: `incrementTodaysCount()`
+
+Concept: Array + Update
+
+Requirement: Increase today's bird count by 1.
+
+Steps:
+
+1. Find the last index.
+2. Access the last array element.
+3. Add 1 to its existing value.
+4. Update the array element.
+
+Remember:
+
+```
+birdsPerDay[lastIndex]++;
+```
+
+## Task 5: `hasDayWithoutBirds()`
+
+Concept: For loop + If + Boolean
+
+Requirement: Check whether any day had zero birds.
+
+Steps:
+
+1. Create a `for` loop.
+2. Visit every array element.
+3. Check whether the current element equals `0`.
+4. If yes, return `true`.
+5. If the loop finishes without finding zero, return `false`.
+
+Remember:
+
+```
+birdsPerDay[i] == 0
+```
+
+## Task 6: `getCountForFirstDays(int numberOfDays)`
+
+Concept: For loop + Sum + Array
+
+Requirement: Calculate the total birds seen during the first N days.
+
+Steps:
+
+1. Initialize `sum = 0`.
+2. Check whether the requested days exceed array length.
+3. If yes, set `numberOfDays` to array length.
+4. Start a loop from index `0`.
+5. Add each element to `sum`.
+6. Return `sum`.
+
+Remember:
+
+```
+sum = sum + birdsPerDay[i];
+```
+
+## Task 7: `getBusyDays()`
+
+Concept: For loop + If + Counter
+
+Requirement: Count how many days were busy days.
+
+For this exercise, we'll use the condition of 7 or more birds from our previous example.
+
+Steps:
+
+1. Initialize `count = 0`.
+2. Loop through the entire array.
+3. Check whether `birdsPerDay[i] >= 7`.
+4. If true, increment `count`.
+5. Return `count`.
+
+Remember:
+
+```
+if (birdsPerDay[i] >= 7) {
+    count++;
+}
+```
+
+# Complete concept revision
+
+| Task | Method                 | Main concept   |
+| ---- | ---------------------- | -------------- |
+| 1    | Constructor            | Clone array    |
+| 2    | getLastWeek()          | Return array   |
+| 3    | getToday()             | Last index     |
+| 4    | incrementTodaysCount() | Update array   |
+| 5    | hasDayWithoutBirds()   | Boolean + If   |
+| 6    | getCountForFirstDays() | Sum + For loop |
+| 7    | getBusyDays()          | Counter + If   |
+
+BirdWatcher progress
+
+7/7 completed
+
+Task 1: Constructor and clone
+
+Task 2: getLastWeek()
+
+Task 3: getToday()
+
+Task 4: incrementTodaysCount()
+
+Task 5: hasDayWithoutBirds()
+
+Task 6: getCountForFirstDays()
+
+Task 7: getBusyDays()
+
+## What you should learn after BirdWatcher
+
+These are the next important Java practice patterns:
+
+1. Find the maximum and minimum in an array.
+2. Count even and odd numbers.
+3. Reverse an array.
+4. Find duplicate elements.
+5. Find the second-largest element.
+6. Calculate the average of array elements.
+7. Search for an element.
+8. Find the frequency of each element.
+
